@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todoist - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="form-header">
+                <h1>Admin Login</h1>
+            </div>
+            <div class="social-login">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p>or use your Email</p>
+            <form>
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="email" placeholder="Email ID" id="emailid">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" id="passwordid">
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember Me</label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <input type="button" value="Login" class="login-btn" onclick="admin()">
+                <div id="invalid"></div>
+            </form>
+            <p class="toggle-form" onclick="move()">Login as Employee</p>
+        </div>
+
+        <div class="signup-box">
+            <h1>Employee Login</h1>
+            <div class="social-login">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p>or Enter Your Details</p>
+            <form>
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="email" placeholder="Email ID" id="emailidemp">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" id="passwordidemp">
+                </div>
+                <input type="button" value="Sign Up" class="signup-btn" onclick="emp()">
+                <div id="invalidemp"></div>
+            </form>
+            <p class="toggle-form" onclick="moveback()">Admin Login</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

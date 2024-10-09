@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="emp1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <img src="review3.png" alt="Employee Avatar"> 
+        <span class="name">Ansh</span> 
+
+        <nav>
+            <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#"><i class="fa-solid fa-tasks"></i> Tasks</a>
+            <a href="index.html" id="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </nav>
+    </div>
+
+    <div class="dashboard">
+        <header class="head">
+            <div class="welcome">
+                <span id="wel"><b>Welcome, Ansh!</b></span>
+                <span id="tag">Your task overview and team collaboration.</span>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="Search...">
+            </div>
+        </header>
+
+        <section class="task-assigned">
+            <h2>Tasks Assigned To You</h2>
+            <div class="task-list align">
+                <!-- Task content dynamically populated -->
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Your Team</h2> 
+            <div class="team-images">
+                <span><img src="review1.png" alt="Tanuj"><br>Tanuj (Admin)</span>
+                <span><img src="review3.png" alt="Ansh"><br>Ansh</span>
+                <span><img src="review4.png" alt="Anmol"><br>Anmol</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const employeeName = 'Ansh';
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            const taskList = document.querySelector('.task-list');
+
+            const employeeTasks = tasks.filter(task => task.assignedTo === employeeName);
+
+            if (employeeTasks.length > 0) {
+                employeeTasks.forEach((task, index) => {
+                    const taskElement = document.createElement('div');
+                    taskElement.classList.add('task-item');
+                    taskElement.innerHTML = `
+                        <span>${task.name} &ensp;
+                        <button class="done-btn" data-index="${index}">Mark as Done</button></span>
+                        <span id="date"><i class="fa-solid fa-circle-dot" style="color: ${task.status === 'Pending' ? '#e74c3c' : '#27ae60'};"></i> ${task.date}</span>
+                    `;
+                    taskList.appendChild(taskElement);
+                });
+            } else {
+                taskList.innerHTML = '<p>No tasks assigned.</p>';
+            }
+
+            document.querySelectorAll('.done-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const taskIndex = button.getAttribute('data-index');
+                    tasks[taskIndex].status = 'Done';
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    location.reload();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

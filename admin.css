@@ -1,0 +1,178 @@
+/* General Reset */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: #FAF9F6;
+    height: 100vh;
+    width: 100vw;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    width: 12%;
+    background-color: #FFD700; /* Golden background */
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    transition: width 0.3s;
+    border-right: 2px solid #E5E5E5;
+}
+
+.navbar img {
+    width: 60%;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 3px solid #FFFFFF;
+}
+
+.navbar span {
+    font-size: 18px;
+    color: #6D6D6D;
+    margin-bottom: 20px;
+}
+
+.navbar i {
+    font-size: 28px;
+    margin: 15px 0;
+    color: #333333;
+    transition: color 0.3s ease;
+}
+
+.navbar i:hover {
+    color: #FF6347; /* Tomato accent color */
+}
+
+#logout {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+/* Dashboard */
+.dash {
+    margin-left: 14%;
+    width: 85%;
+    padding: 2%;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.welcome #wel {
+    font-size: 32px;
+    color: #333333;
+}
+
+.search input {
+    width: 300px;
+    padding: 12px;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    color: #333333;
+    transition: box-shadow 0.2s ease;
+}
+
+.search input::placeholder {
+    color: #999999;
+}
+
+.search input:focus {
+    box-shadow: 0 0 10px #FF6347; /* Tomato accent on focus */
+}
+
+/* Task Section */
+.addtask {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.addtask input, .addtask select {
+    width: 90%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #FF6347; /* Tomato border */
+    font-size: 16px;
+}
+
+.addtask input[type="submit"] {
+    background-color: #FF6347;
+    color: white;
+    cursor: pointer;
+}
+
+.addtask input[type="submit"]:hover {
+    background-color: #FF4500; /* Darker tomato on hover */
+}
+
+/* Messages */
+.messages {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    color: #333333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.messages img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.mess {
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Team */
+.team {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.team img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.img span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+pre {
+    font-size: 18px;
+    color: #6D6D6D;
+}
+
+
